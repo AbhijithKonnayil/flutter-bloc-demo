@@ -20,20 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
           create: (BuildContext context) => HomeBloc(),
-          child: IW(child: HomePage())),
+          child: HomePage()),
     );
-  }
-}
-
-class IW extends InheritedWidget {
-  String commonVar;
-
-  
-  Widget child;
-  IW({this.child}) : super(child: child);
-  @override
-  bool updateShouldNotify(covariant InheritedWidget oldWidget) {
-    // TODO: implement updateShouldNotify
-    throw UnimplementedError();
   }
 }
