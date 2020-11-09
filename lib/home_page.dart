@@ -1,4 +1,5 @@
 import 'package:demo/home_bloc/home_bloc.dart';
+import 'package:demo/pages/abhi_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,6 +36,26 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget buildInitalUi() {
+    return SafeArea(
+      child: ListView(
+        padding: const EdgeInsets.all(10),
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (p) => AbhiPage()));
+            },
+            child: Card(
+              elevation: 8,
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Text("Abhijith K"),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
     return Center(
       child: FlatButton(
         color: Colors.blue,
@@ -50,7 +71,16 @@ class _HomePageState extends State<HomePage> {
     return Container(
       color: Colors.green,
       alignment: Alignment.center,
-      child: Text(data),
+      child: ListView(
+        children: [
+          GestureDetector(
+            onTap: () {},
+            child: Card(
+              child: Text("Abhijith K"),
+            ),
+          )
+        ],
+      ),
     );
   }
 
