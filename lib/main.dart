@@ -1,9 +1,11 @@
 import 'package:demo/abhi_bloc/abhi_bloc.dart';
+import 'package:demo/azeem_bloc/azeem_bloc_bloc.dart';
 import 'package:demo/alsam_bloc/alsam_bloc.dart';
 import 'package:demo/home_bloc/home_bloc.dart';
 import 'shibin_bloc/shibin_bloc.dart';
 import 'package:demo/home_page.dart';
 import 'package:demo/pages/abhi_page.dart';
+import 'package:demo/pages/azeem_page.dart';
 import 'package:demo/pages/shibin_page.dart';
 import 'package:demo/pages/alsam_page.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +34,8 @@ class MyApp extends StatelessWidget {
                 create: (BuildContext context) => AbhiBloc()),
             BlocProvider<ShibinBloc>(
                 create: (BuildContext context) => ShibinBloc()),
+            BlocProvider<AzeemBlocBloc>(
+                create: (BuildContext context) => AzeemBlocBloc()),
             BlocProvider<IreneBloc>(
               create: (BuildContext context) {
                 return IreneBloc();
@@ -46,7 +50,8 @@ class MyApp extends StatelessWidget {
               AbhiPage(),
               AlsamPage(),
               IrenePage(),
-              ShibinPage()
+              ShibinPage(),
+              AzeemPage()
             ],
           )),
     );
