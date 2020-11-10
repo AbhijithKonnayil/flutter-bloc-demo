@@ -5,7 +5,9 @@ import 'package:demo/home_bloc/home_bloc.dart';
 import 'package:demo/irene_ann_bloc/irene_bloc.dart';
 import 'package:demo/irene_bloc/irene_bloc.dart';
 import 'package:demo/jobin_bloc/jobin_bloc.dart';
+import 'package:demo/joseph_bloc/joseph_bloc.dart';
 import 'package:demo/pages/abhi_page.dart';
+import 'package:demo/pages/joseph_page.dart';
 import 'package:demo/pages/abhishek_page.dart';
 import 'package:demo/pages/alsam_page.dart';
 import 'package:demo/pages/azeem_page.dart';
@@ -40,6 +42,8 @@ class MyApp extends StatelessWidget {
                 create: (BuildContext context) => HomeBloc()),
             BlocProvider<AbhiBloc>(
                 create: (BuildContext context) => AbhiBloc()),
+            BlocProvider<JosephBloc>(
+                create: (BuildContext context) => JosephBloc()),
             BlocProvider<ShibinBloc>(
                 create: (BuildContext context) => ShibinBloc()),
             BlocProvider<AzeemBlocBloc>(
@@ -49,18 +53,19 @@ class MyApp extends StatelessWidget {
                 return IreneBloc();
               },
             ),
-             BlocProvider<AbhishekBloc>(
+            BlocProvider<AbhishekBloc>(
                 create: (BuildContext context) => AbhishekBloc()),
-             BlocProvider<HebaBloc>(create: (BuildContext context) => HebaBloc()),
-             BlocProvider<JobinBloc>(
+            BlocProvider<HebaBloc>(
+                create: (BuildContext context) => HebaBloc()),
+            BlocProvider<JobinBloc>(
                 create: (BuildContext context) => JobinBloc()),
             BlocProvider<AlsamBloc>(
                 create: (BuildContext context) => AlsamBloc()),
-                 BlocProvider(
-            create: (BuildContext context) {
-              return IreneAnnBloc();
-            },
-          ),
+            BlocProvider(
+              create: (BuildContext context) {
+                return IreneAnnBloc();
+              },
+            ),
           ],
           child: PageView(
             children: [
@@ -72,7 +77,8 @@ class MyApp extends StatelessWidget {
               IreneAnnPage(),
               JobinPage(),
               HebaPage(),
-              AbhishekPage()
+              AbhishekPage(),
+              JosephPage()
             ],
           )),
     );
