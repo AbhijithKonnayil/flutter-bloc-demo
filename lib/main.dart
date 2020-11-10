@@ -2,6 +2,9 @@ import 'package:demo/abhi_bloc/abhi_bloc.dart';
 import 'package:demo/alsam_bloc/alsam_bloc.dart';
 import 'package:demo/azeem_bloc/azeem_bloc_bloc.dart';
 import 'package:demo/home_bloc/home_bloc.dart';
+import 'package:demo/neabloc/nea_bloc.dart';
+import 'package:demo/pages/abhi_page.dart';
+import 'package:demo/pages/nea_page.dart';
 import 'package:demo/irene_ann_bloc/irene_bloc.dart';
 import 'package:demo/irene_bloc/irene_bloc.dart';
 import 'package:demo/jobin_bloc/jobin_bloc.dart';
@@ -40,6 +43,11 @@ class MyApp extends StatelessWidget {
           providers: [
             BlocProvider<HomeBloc>(
                 create: (BuildContext context) => HomeBloc()),
+                 BlocProvider(
+            create: (BuildContext context) {
+              return NeaBloc();
+            },
+          ),
             BlocProvider<AbhiBloc>(
                 create: (BuildContext context) => AbhiBloc()),
             BlocProvider<JosephBloc>(
@@ -78,7 +86,8 @@ class MyApp extends StatelessWidget {
               JobinPage(),
               HebaPage(),
               AbhishekPage(),
-              JosephPage()
+              JosephPage(),
+               NeaPage(),
             ],
           )),
     );
