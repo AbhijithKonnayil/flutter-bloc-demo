@@ -1,7 +1,9 @@
 import 'package:demo/home_bloc/home_bloc.dart';
+import 'package:demo/irene_bloc/irene_bloc.dart';
 import 'package:demo/pages/abhi_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:demo/pages/irene_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -43,7 +45,10 @@ class _HomePageState extends State<HomePage> {
           GestureDetector(
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (p) => AbhiPage()));
+                  context,
+                  MaterialPageRoute(
+                    builder: (p) => AbhiPage(),
+                  ));
             },
             child: Card(
               elevation: 8,
@@ -52,7 +57,26 @@ class _HomePageState extends State<HomePage> {
                 child: Text("Abhijith K"),
               ),
             ),
-          )
+          ),
+          GestureDetector(
+            onTap: () {
+              BlocProvider<IreneBloc>(
+                create: (context) => IreneBloc(),
+              );
+              Navigator.push(context, MaterialPageRoute(
+                builder: (p)
+                  => IrenePage(),
+                
+              ));
+            },
+            child: Card(
+              elevation: 8,
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Text("Irene Ann Zachariah"),
+              ),
+            ),
+          ),
         ],
       ),
     );
