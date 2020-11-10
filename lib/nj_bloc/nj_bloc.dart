@@ -1,0 +1,28 @@
+import 'dart:async';
+import 'dart:html';
+
+import 'package:bloc/bloc.dart';
+import 'package:meta/meta.dart';
+
+part 'nj_event.dart';
+part 'nj_state.dart';
+
+class NjBloc extends Bloc<NjEvent, NjState> {
+  NjBloc() : super(NjInitial());
+
+  @override
+  Stream<NjState> mapEventToState(
+    NjEvent event,
+  ) async* {
+    // TODO: implement mapEventToState
+    if(event is EmailClickedEvent){
+      yield EmailClickedState();
+    }
+    else if(event is PhoneClickedEvent){
+      yield PhoneClickedState();
+    }
+    else if(event is BackClickedEvent){
+      yield NjInitial();
+    }
+  }
+}
