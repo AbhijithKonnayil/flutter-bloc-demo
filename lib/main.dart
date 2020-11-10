@@ -5,6 +5,8 @@ import 'package:demo/pages/abhi_page.dart';
 import 'package:demo/pages/abhishek_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'abhishek_bloc/abhishek_bloc.dart';
 //import 'package:http/http.dart' as http;
 
 void main() {
@@ -25,10 +27,13 @@ class MyApp extends StatelessWidget {
           providers: [
             BlocProvider<HomeBloc>(
                 create: (BuildContext context) => HomeBloc()),
-            BlocProvider<AbhiBloc>(create: (BuildContext context) => AbhiBloc())
+            BlocProvider<AbhiBloc>(
+                create: (BuildContext context) => AbhiBloc()),
+            BlocProvider<AbhishekBloc>(
+                create: (BuildContext context) => AbhishekBloc())
           ],
           child: PageView(
-            children: [HomePage(), AbhiPage(),AbhishekPage()],
+            children: [HomePage(), AbhiPage(), AbhishekPage()],
           )),
     );
   }

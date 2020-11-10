@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'abhishek_state.dart';
 part 'abhishek_event.dart';
 
-class AbhishekBloc extends Bloc<AbhishekEvent,AbhishekState>{
+class AbhishekBloc extends Bloc<AbhishekEvent, AbhishekState> {
   AbhishekBloc() : super(AbhishekInitialState());
 
   @override
@@ -15,6 +15,4 @@ class AbhishekBloc extends Bloc<AbhishekEvent,AbhishekState>{
     else if (event is AbhishekBackButtonClickedEvent)
       yield AbhishekInitialState();
   }
-
 }
-

@@ -1,4 +1,4 @@
-part of abhishek_bloc.dart;
+part of 'abhishek_bloc.dart';
 
 abstract class AbhishekState {}
 
