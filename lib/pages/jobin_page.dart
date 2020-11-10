@@ -50,7 +50,7 @@ class _JobinPageState extends State<JobinPage> {
                 ),
                 FlatButton(
                   child: Text("Back"),
-                  onPressed: () => JobinBackButtonClickedEvent(),
+                  onPressed: () => jobinBloc.add(JobinBackButtonClickedEvent()),
                 ),
               ],
             ));
@@ -64,7 +64,8 @@ class _JobinPageState extends State<JobinPage> {
                   ),
                   FlatButton(
                     child: Text("Back"),
-                    onPressed: () => JobinBackButtonClickedEvent(),
+                    onPressed: () =>
+                        jobinBloc.add(JobinBackButtonClickedEvent()),
                   ),
                 ],
               ),
