@@ -4,6 +4,7 @@ import 'package:demo/alsam_bloc/alsam_bloc.dart';
 import 'package:demo/home_bloc/home_bloc.dart';
 import 'shibin_bloc/shibin_bloc.dart';
 import 'package:demo/home_page.dart';
+import 'package:demo/irene_ann_bloc/irene_bloc.dart';
 import 'package:demo/pages/abhi_page.dart';
 import 'package:demo/pages/azeem_page.dart';
 import 'package:demo/pages/shibin_page.dart';
@@ -13,6 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:demo/irene_bloc/irene_bloc.dart';
 import 'package:demo/pages/irene_page.dart';
+import 'package:demo/pages/irene_ann_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,7 +44,12 @@ class MyApp extends StatelessWidget {
               },
             ),
             BlocProvider<AlsamBloc>(
-                create: (BuildContext context) => AlsamBloc())
+                create: (BuildContext context) => AlsamBloc()),
+                 BlocProvider(
+            create: (BuildContext context) {
+              return IreneAnnBloc();
+            },
+          ),
           ],
           child: PageView(
             children: [
@@ -51,7 +58,8 @@ class MyApp extends StatelessWidget {
               AlsamPage(),
               IrenePage(),
               ShibinPage(),
-              AzeemPage()
+              AzeemPage(),
+              IreneAnnPage()
             ],
           )),
     );

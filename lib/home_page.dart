@@ -5,6 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:demo/pages/irene_page.dart';
 import 'package:demo/pages/alsam_page.dart';
+import 'package:demo/irene_ann_bloc/irene_bloc.dart';
+import 'package:demo/pages/abhi_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'pages/irene_ann_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -85,12 +90,21 @@ class _HomePageState extends State<HomePage> {
               );
               Navigator.push(
                   context, MaterialPageRoute(builder: (p) => AlsamPage()));
+              BlocProvider<IreneAnnBloc>(
+                create: (context) => IreneAnnBloc(),
+              );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (p) => IreneAnnPage(),
+                ),
+              );
             },
             child: Card(
               elevation: 8,
               child: Padding(
                 padding: const EdgeInsets.all(12),
-                child: Text("Alsam"),
+                child: Text("Irene Anna Kurien"),
               ),
             ),
           ),

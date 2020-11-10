@@ -108,7 +108,11 @@ packages:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "1.3.0-nullsafety.5"
+=======
+    version: "1.3.0-nullsafety.3"
+>>>>>>> 44-create-irenes-bloc
   nested:
     dependency: transitive
     description:
@@ -155,7 +159,11 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< HEAD
     version: "1.10.0-nullsafety.5"
+=======
+    version: "1.10.0-nullsafety.1"
+>>>>>>> 44-create-irenes-bloc
   stream_channel:
     dependency: transitive
     description:
@@ -199,5 +207,9 @@ packages:
     source: hosted
     version: "2.1.0-nullsafety.4"
 sdks:
+<<<<<<< HEAD
   dart: ">=2.11.0-0.0 <=2.12.0-15.0.dev"
+=======
+  dart: ">=2.10.0-110 <2.11.0"
+>>>>>>> 44-create-irenes-bloc
   flutter: ">=1.16.0"
