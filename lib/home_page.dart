@@ -1,5 +1,7 @@
 import 'package:demo/home_bloc/home_bloc.dart';
+import 'package:demo/neabloc/nea_bloc.dart';
 import 'package:demo/pages/abhi_page.dart';
+import 'package:demo/pages/nea_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -52,6 +54,22 @@ class _HomePageState extends State<HomePage> {
                 child: Text("Abhijith K"),
               ),
             ),
+          ),
+          GestureDetector(
+            onTap: () {
+              BlocProvider<NeaBloc>(
+                create: (context) => NeaBloc(),
+              );
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (p) => NeaPage()));
+            },
+            child: Card(
+              elevation: 8,
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Text("Neha Ajith"),
+              ),
+            ),
           )
         ],
       ),
@@ -77,6 +95,12 @@ class _HomePageState extends State<HomePage> {
             onTap: () {},
             child: Card(
               child: Text("Abhijith K"),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: Card(
+              child: Text("Neha Ajith"),
             ),
           )
         ],
