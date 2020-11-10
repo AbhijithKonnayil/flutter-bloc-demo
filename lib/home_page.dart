@@ -21,7 +21,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocBuilder<HomeBloc, HomeState>(
-        builder: (context, state) {
+        // ignore: missing_return
+        builder: (context,state) {
           if (state is HomeInitial)
             return buildInitalUi();
           else if (state is HomeLoadingState)
