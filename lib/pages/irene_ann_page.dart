@@ -1,26 +1,25 @@
+import 'package:demo/irene_ann_bloc/irene_bloc.dart';
 import 'package:flutter/material.dart';
-
-import 'package:demo/irene_bloc/irene_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class IrenePage extends StatefulWidget {
+class IreneAnnPage extends StatefulWidget {
   @override
-  _IrenePageState createState() => _IrenePageState();
+  _IreneAnnPageState createState() => _IreneAnnPageState();
 }
 
-class _IrenePageState extends State<IrenePage> {
-  IreneBloc ireneBloc;
+class _IreneAnnPageState extends State<IreneAnnPage> {
+  IreneAnnBloc ireneBloc;
   @override
   void initState() {
     super.initState();
-    ireneBloc = BlocProvider.of<IreneBloc>(context);
+    ireneBloc = BlocProvider.of<IreneAnnBloc>(context);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: BlocBuilder<IreneBloc, IreneState>(
+        child: BlocBuilder<IreneAnnBloc, IreneAnnState>(
           builder: (context, state) {
             print(state);
             if (state is IreneInitial)

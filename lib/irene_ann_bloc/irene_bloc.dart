@@ -6,12 +6,12 @@ import 'package:meta/meta.dart';
 part 'irene_event.dart';
 part 'irene_state.dart';
 
-class IreneBloc extends Bloc<IreneEvent, IreneState> {
-  IreneBloc() : super(IreneInitial());
+class IreneAnnBloc extends Bloc<IreneAnnEvent, IreneAnnState> {
+  IreneAnnBloc() : super(IreneInitial());
 
   @override
-  Stream<IreneState> mapEventToState(
-    IreneEvent event,
+  Stream<IreneAnnState> mapEventToState(
+    IreneAnnEvent event,
   ) async* {
     if (event is IreneEmailButtonClickedEvent)
       yield IreneEmailLoadState();

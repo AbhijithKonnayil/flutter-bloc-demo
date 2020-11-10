@@ -1,11 +1,11 @@
 import 'package:demo/abhi_bloc/abhi_bloc.dart';
 import 'package:demo/home_bloc/home_bloc.dart';
 import 'package:demo/home_page.dart';
+import 'package:demo/irene_ann_bloc/irene_bloc.dart';
 import 'package:demo/pages/abhi_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:demo/irene_bloc/irene_bloc.dart';
-import 'package:demo/pages/irene_page.dart';
+import 'package:demo/pages/irene_ann_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (BuildContext context) {
-              return IreneBloc();
+              return IreneAnnBloc();
             },
           ),
         ],
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
             children: [
               HomePage(),
               AbhiPage(),
-              IrenePage(),
+              IreneAnnPage(),
             ],
           ),
         ),

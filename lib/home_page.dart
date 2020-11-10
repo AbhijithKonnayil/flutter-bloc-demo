@@ -1,10 +1,9 @@
 import 'package:demo/home_bloc/home_bloc.dart';
+import 'package:demo/irene_ann_bloc/irene_bloc.dart';
 import 'package:demo/pages/abhi_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'irene_bloc/irene_bloc.dart';
-import 'pages/irene_page.dart';
+import 'pages/irene_ann_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -58,13 +57,13 @@ class _HomePageState extends State<HomePage> {
           ),
           GestureDetector(
             onTap: () {
-              BlocProvider<IreneBloc>(
-                create: (context) => IreneBloc(),
+              BlocProvider<IreneAnnBloc>(
+                create: (context) => IreneAnnBloc(),
               );
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (p) => IrenePage(),
+                  builder: (p) => IreneAnnPage(),
                 ),
               );
             },
