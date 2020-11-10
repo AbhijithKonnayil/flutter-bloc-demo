@@ -23,7 +23,7 @@ class _JosephPageState extends State<JosephPage> {
         child: BlocBuilder<JosephBloc, JosephState>(builder: (context, state) {
           print(state);
           if (state is JosephInitial)
-            return widget(
+            return SafeArea(
               child: Center(
                 child: Container(
                     alignment: Alignment.center,
