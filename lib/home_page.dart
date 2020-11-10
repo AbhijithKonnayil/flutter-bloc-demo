@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   HomeBloc homeBloc;
+
   @override
   void initState() {
     super.initState();
@@ -21,15 +22,15 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
-          if (state is HomeInitial) {
+          if (state is HomeInitial)
             return buildInitalUi();
-          } else if (state is HomeLoadingState) {
+          else if (state is HomeLoadingState)
             return Center(child: CircularProgressIndicator());
-          } else if (state is HomeDataLoadSuccessState) {
-            return buildDataLoadSuccessUi(state.data);
-          } else if (state is HomeDataLoadFailureState) {
+          else if (state is! HomeDataLoadSuccessState) if (state
+              is HomeDataLoadFailureState)
             return buildDataLoadFailureUi(state.message);
-          }
+          else
+            return buildDataLoadSuccessUi(state.data);
         },
       ),
     );
