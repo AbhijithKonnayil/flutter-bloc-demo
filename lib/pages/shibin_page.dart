@@ -20,6 +20,12 @@ class _ShibinPageState extends State<ShibinPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          leading: IconButton(
+              icon: Icon(Icons.arrow_left),
+              onPressed: () {
+                Navigator.pop(context);
+              })),
       body: Center(
         child: BlocBuilder<ShibinBloc, ShibinState>(builder: (context, state) {
           print(state);
