@@ -6,6 +6,7 @@ import 'package:demo/irene_ann_bloc/irene_bloc.dart';
 import 'package:demo/irene_bloc/irene_bloc.dart';
 import 'package:demo/jobin_bloc/jobin_bloc.dart';
 import 'package:demo/pages/abhi_page.dart';
+import 'package:demo/pages/heba_page.dart';
 import 'package:demo/pages/alsam_page.dart';
 import 'package:demo/pages/azeem_page.dart';
 import 'package:demo/pages/irene_ann_page.dart';
@@ -15,6 +16,7 @@ import 'package:demo/pages/shibin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'heba_bloc/heba_bloc.dart';
 import 'shibin_bloc/shibin_bloc.dart';
 
 void main() => runApp(MyApp());
@@ -44,6 +46,7 @@ class MyApp extends StatelessWidget {
                 return IreneBloc();
               },
             ),
+             BlocProvider<HebaBloc>(create: (BuildContext context) => HebaBloc()),
              BlocProvider<JobinBloc>(
                 create: (BuildContext context) => JobinBloc()),
             BlocProvider<AlsamBloc>(
@@ -63,6 +66,7 @@ class MyApp extends StatelessWidget {
               AzeemPage(),
               IreneAnnPage(),
               JobinPage(),
+              HebaPage()
             ],
           )),
     );
