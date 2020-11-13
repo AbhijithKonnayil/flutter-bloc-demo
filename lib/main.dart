@@ -20,6 +20,8 @@ import 'package:demo/pages/irene_ann_page.dart';
 import 'package:demo/pages/irene_page.dart';
 import 'package:demo/pages/jobin_page.dart';
 import 'package:demo/pages/shibin_page.dart';
+import 'package:demo/pages/yarbash_page.dart';
+import 'package:demo/yarbash_bloc/yarbash_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -43,11 +45,11 @@ class MyApp extends StatelessWidget {
           providers: [
             BlocProvider<HomeBloc>(
                 create: (BuildContext context) => HomeBloc()),
-                 BlocProvider(
-            create: (BuildContext context) {
-              return NeaBloc();
-            },
-          ),
+            BlocProvider(
+              create: (BuildContext context) {
+                return NeaBloc();
+              },
+            ),
             BlocProvider<AbhiBloc>(
                 create: (BuildContext context) => AbhiBloc()),
             BlocProvider<JosephBloc>(
@@ -63,6 +65,8 @@ class MyApp extends StatelessWidget {
             ),
             BlocProvider<AbhishekBloc>(
                 create: (BuildContext context) => AbhishekBloc()),
+            BlocProvider<YarbashBloc>(
+                create: (BuildContext context) => YarbashBloc()),
             BlocProvider<HebaBloc>(
                 create: (BuildContext context) => HebaBloc()),
             BlocProvider<JobinBloc>(
@@ -78,6 +82,7 @@ class MyApp extends StatelessWidget {
           child: PageView(
             children: [
               AbhiPage(),
+              YarbashPage(),
               AlsamPage(),
               IrenePage(),
               ShibinPage(),
@@ -87,7 +92,7 @@ class MyApp extends StatelessWidget {
               HebaPage(),
               AbhishekPage(),
               JosephPage(),
-               NeaPage(),
+              NeaPage(),
             ],
           )),
     );
