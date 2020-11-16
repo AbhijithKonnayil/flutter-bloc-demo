@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:demo/main.dart';
 import 'package:demo/nj_bloc/nj_bloc.dart';
 import 'package:flutter/material.dart';
