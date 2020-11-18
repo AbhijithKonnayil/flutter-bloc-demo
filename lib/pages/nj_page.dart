@@ -13,62 +13,76 @@ class _NjPageState extends State<NjPage> {
   @override
   void initState() {
     super.initState();
-    
   }
 
   @override
   Widget build(BuildContext context) {
     njBloc = BlocProvider.of<NjBloc>(context);
     return MaterialApp(
-      title: "Namratha's Page",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Namratha's Page")),
-        body: BlocBuilder <NjBloc, NjState> (
-          builder : (context,state) {
+        title: "Namratha's Page",
+        home: Scaffold(
+          appBar: AppBar(title: Text("Namratha's Page")),
+          body: BlocBuilder<NjBloc, NjState>(builder: (context, state) {
             print(state);
-            if (state is NjInitial) {       
+            if (state is NjInitial) {
               return Center(
-              child: Column(children: [
-                          Text("Contact Information"),
-            
-                          RaisedButton(
-                            child: Text("Email"),
-                            onPressed: (){
-                              njBloc.add(EmailClickedEvent());
-                            }
-                          ),
-            
-                          RaisedButton(
-                            onPressed: () {njBloc.add(PhoneClickedEvent());},
-                            child: Text("Phone number"),
-                          ),
-            
-                          RaisedButton(onPressed: (){njBloc.add(BackClickedEvent());},child: Text("Go back"),)
-                        ],
-                      ),
-          
-            );
-            }
-            else if(state is EmailClickedState){
-              return Container(
-                child: Text("namrathajacob@gmail.com"),
-                alignment: Alignment.center,
-              );}
-            else if (state is PhoneClickedState) {
-              return Container(
-                child: Text("8075914972"),
-              alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    Text("Contact Information"),
+                    RaisedButton(
+                        child: Text("Email"),
+                        onPressed: () {
+                          njBloc.add(EmailClickedEvent());
+                        }),
+                    RaisedButton(
+                      onPressed: () {
+                        njBloc.add(PhoneClickedEvent());
+                      },
+                      child: Text("Phone number"),
+                    ),
+                    RaisedButton(
+                      onPressed: () {
+                        njBloc.add(BackClickedEvent());
+                      },
+                      child: Text("Go back"),
+                    )
+                  ],
+                ),
+              );
+            } else if (state is EmailClickedState) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    child: Text("namrathajacob@gmail.com"),
+                    alignment: Alignment.center,
+                  ),
+                  RaisedButton(
+                    onPressed: () {
+                      njBloc.add(BackClickedEvent());
+                    },
+                    child: Text("Go back"),
+                  )
+                ],
+              );
+            } else if (state is PhoneClickedState) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    child: Text("8075914972"),
+                    alignment: Alignment.center,
+                  ),
+                  RaisedButton(
+                    onPressed: () {
+                      njBloc.add(BackClickedEvent());
+                    },
+                    child: Text("Go back"),
+                  )
+                ],
               );
             }
-            
-            else if (state is BackClickedState) {
-              return(Text("Will go back")) ;
-            }
-                      
           }),
-      )
-    );
+        ));
   }
 }
-

@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:html';
+
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
@@ -14,7 +14,7 @@ class NjBloc extends Bloc<NjEvent, NjState> {
   Stream<NjState> mapEventToState(
     NjEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    
     if(event is EmailClickedEvent){
       yield EmailClickedState();
     }

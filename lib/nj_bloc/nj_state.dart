@@ -5,8 +5,8 @@ abstract class NjState {}
 
 class NjInitial extends NjState {}
 
-class EmailClickedState extends NjInitial {}
+class EmailClickedState extends NjState {}
 
-class PhoneClickedState extends NjInitial {}
+class PhoneClickedState extends NjState {}
 
-class BackClickedState extends NjInitial {}
+class BackClickedState extends NjState {}
