@@ -21,6 +21,7 @@ class _AzeemPageState extends State<AzeemPage> {
     return Scaffold(
       body: Center(
         child: BlocBuilder<AzeemBlocBloc, AzeemBlocState>(builder: (context, state) {
+          // ignore: missing_return
           if (state is AzeemBlocInitial)
             return Center(
               child: Container(
