@@ -12,7 +12,7 @@ class Room{
   this.roomId,
   
   this.roomNo,
-  this.imageUrl
+  this.imageUrl,
   this.description,
   this.hasAC,
   this.rating,
@@ -30,8 +30,8 @@ class Room{
       description=json['description'];
       hasAC=json['hasAC'];
       rating=json[' rating'];
-      review=json['description'];
-     price=json['description'];
+      review=json['review'];
+     price=json['price'];
 
     }
 Map<String, dynamic> toJson() {
