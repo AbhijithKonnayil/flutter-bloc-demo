@@ -38,6 +38,7 @@ Map<String, dynamic> toJson() {
     return {
       'roomId': roomId,
       'roomNo': roomNo,
+      'imageUrl':imageUrl,
      'description': description,
      'hasAC': hasAC,
     'rating':rating,
