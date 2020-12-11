@@ -1,8 +1,8 @@
 class Customer {
-  int id;
+  String id;
   String name;
   String email;
-  double phoneNo;
+  String phoneNo;
   Map<String, dynamic> address;
 
   Customer(this.id, this.name, this.address, this.phoneNo, this.email);
