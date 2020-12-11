@@ -2,24 +2,28 @@ import 'package:demo/abhi_bloc/abhi_bloc.dart';
 import 'package:demo/alsam_bloc/alsam_bloc.dart';
 import 'package:demo/azeem_bloc/azeem_bloc_bloc.dart';
 import 'package:demo/home_bloc/home_bloc.dart';
-import 'package:demo/neabloc/nea_bloc.dart';
+
+import 'package:demo/nj_bloc/nj_bloc.dart';
 import 'package:demo/pages/abhi_page.dart';
-import 'package:demo/pages/nea_page.dart';
-import 'package:demo/irene_ann_bloc/irene_bloc.dart';
-import 'package:demo/irene_bloc/irene_bloc.dart';
-import 'package:demo/jobin_bloc/jobin_bloc.dart';
-import 'package:demo/joseph_bloc/joseph_bloc.dart';
-import 'package:demo/pages/abhi_page.dart';
-import 'package:demo/pages/joseph_page.dart';
+import 'package:demo/pages/nj_page.dart';
 import 'package:demo/pages/abhishek_page.dart';
 import 'package:demo/pages/alsam_page.dart';
 import 'package:demo/pages/azeem_page.dart';
-//import 'package:http/http.dart' as http;
 import 'package:demo/pages/heba_page.dart';
 import 'package:demo/pages/irene_ann_page.dart';
 import 'package:demo/pages/irene_page.dart';
 import 'package:demo/pages/jobin_page.dart';
+import 'package:demo/pages/joseph_page.dart';
+import 'package:demo/pages/nea_page.dart';
 import 'package:demo/pages/shibin_page.dart';
+import 'package:demo/neabloc/nea_bloc.dart';
+
+
+import 'package:demo/irene_ann_bloc/irene_bloc.dart';
+import 'package:demo/irene_bloc/irene_bloc.dart';
+import 'package:demo/jobin_bloc/jobin_bloc.dart';
+import 'package:demo/joseph_bloc/joseph_bloc.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,6 +52,7 @@ class MyApp extends StatelessWidget {
               return NeaBloc();
             },
           ),
+           BlocProvider<NjBloc>(create: (BuildContext context) => NjBloc()),
             BlocProvider<AbhiBloc>(
                 create: (BuildContext context) => AbhiBloc()),
             BlocProvider<JosephBloc>(
@@ -88,6 +93,7 @@ class MyApp extends StatelessWidget {
               AbhishekPage(),
               JosephPage(),
                NeaPage(),
+              NjPage(),
             ],
           )),
     );
