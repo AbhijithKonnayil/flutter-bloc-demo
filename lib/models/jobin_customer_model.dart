@@ -5,7 +5,7 @@ class Customer {
   String phoneNo;
   Map<String, dynamic> address;
 
-  Customer(this.id, this.name, this.address, this.phoneNo, this.email);
+  Customer({this.id, this.name, this.address, this.phoneNo, this.email});
 
   Customer.fromJson(Map<String, dynamic> json)
       : id = json['id'],
