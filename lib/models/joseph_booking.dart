@@ -1,14 +1,16 @@
+import 'dart:ffi';
+
 class Booking {
-  final int bookingId;
-  final int customerId;
+  final String bookingId;
+  final String customerId;
   final String customerName;
-  final int phone;
+  final String phone;
   final int status;
   final int roomId;
   final String image;
-  final int price;
+  final Float price;
   final String description;
-  final int paymentId;
+  final String paymentId;
   final String paymentMode;
 
   Booking(
